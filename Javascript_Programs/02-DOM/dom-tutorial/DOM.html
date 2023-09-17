@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>get Elements</title>
+    <script src="./app.js" defer></script>
+
+    <style>
+        body {
+            height: 2000px;
+            padding: 100px;
+            background-color: azure;
+        }
+
+        .color {
+            background-color: rgb(3, 2, 58);
+            color: white;
+        }
+
+        .dim {
+            border: 1px solid red;
+            padding: 100px;
+        }
+
+        #box {
+            height: 200px;
+            width: 200px;
+            background-color: plum;
+        }
+
+        #mydiv {
+            padding: 50px;
+            background-color: rgb(52, 13, 230);
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li class="cl first">One</li>
+        <li id="id">Two</li>
+        <li class="cl">Three</li>
+        <li class="cl first">Four</li>
+    </ul>
+
+    <h2 class="intro">heading1</h2>
+    <div id="div1">
+        <p class="intro">paragraph1</p>
+        <p>paragraph2</p>
+        <h2 class="intro">heading2</h2>
+        <p>paragraph3</p>
+        <p class="intro">paragraph4</p>
+        <h2 class="intro">heading2</h2>
+
+    </div>
+
+    <ul id="parent">
+        <li id="child">list5</li>
+        <li>list6</li>
+        <li id="sibling">list7</li>
+        <li>list9</li>
+        <li>list12</li>
+    </ul>
+
+    <h1 id="add">HEADING1</h1>
+
+    <div id="intro">
+        <p id="para">Hello World</p>
+    </div>
+
+    <ul id="list">
+        <li>list1</li>
+        <li>list2</li>
+        <li>list3</li>
+    </ul>
+
+    <ul id="menu">
+        <li>Home</li>
+        <li>Product</li>
+        <li>Menu</li>
+    </ul>
+
+    <div id="intro">
+        <h1>This is a heading</h1>
+        <p>This is a paragraph</p>
+    </div>
+
+        <button id="btn" name="form1">Send</button>
+        
+    <div id="box" class="color">
+        <p>This is a paragrapgh</p>
+    </div>
+
+    <!-- <div id="box"></div> -->
+
+    <form action=""><input type="text" id="name"></form>
+
+    <div id="mydiv"><button id="btn">Click Me</button></div>
+
+
+    <!--###################################### Event Target #######################################-->
+    <button class="btn">first Button</button>
+    <button  class="btn">Second <strong>Button <strong>more nested Button</strong></strong></button>
+    <button class="btn">Third Button</button>
+    <!--###################################### Event Target #######################################-->
+    
+    <a href="https://www.google.com" id="link">Google</a>
+
+    <form action="" id="myForm">
+        <input type="text">
+        <input type="submit">
+    </form>
+
+    <button id="btn1">Google</button>
+    <button id="btn2">yahoo</button>
+    <button id="btn3">Close</button>
+
+    <button id="location" onclick="redirect()">click</button>
+
+    <script>
+        //   let elm = document.getElementById("id").innerHTML = "List By ID"
+        //   let elm = document.getElementsByClassName("cl first")
+        //   for (let i = 0; i < elm.length; i++) { elm[i].innerHTML = "List By CLASS" }
+        //   let elm = document.getElementsByTagName("p");
+        //   for (let i = 0; i < elm.length; i++) { elm[i].innerHTML = "All paragraph changing..." }
+
+        //  SELECTS TAG WHICH IS INSIDE DIV1
+        // let div1 = document.getElementById("div1")  
+        // let elm = div1.getElementsByTagName("h2");
+        // for (let i = 0; i < elm.length; i++) { elm[i].innerHTML = "All h2 changing in id div1" }
+
+        // QUERY SELECTOR
+        // let elm = document.querySelector("p.intro").innerHTML = "first p tag whose id is intro Changing...."
+        // let elm = document.querySelectorAll("p.intro")
+        // for (let i = 0; i < elm.length; i++) { elm[i].innerHTML = "All p tag whose id is intro Changing...." }
+
+        // SELECT PARENT VIA CHILDREN
+        // let child = document.getElementById("child");
+        // let parent = child.parentElement.innerHTML = "Replacing Parent...";
+
+        // SELECT CHILDREN VIA PARENT
+        // let parent = document.getElementById("parent");
+        // let firstChild = parent.firstElementChild.innerHTML = "First Child Changing.....";
+        // let lastChild = parent.lastElementChild.innerHTML = "Last Child Changing.....";
+        // let allChildren = parent.children
+        // for (let i = 0; i < allChildren.length; i++) {
+        //     allChildren[i].innerHTML = "All Children Changing...";
+        // }
+
+        // SELECT SIBLING  VIA SIBLING ID
+        // let sibling = document.getElementById("sibling");
+        // previousSibling = sibling.previousElementSibling.innerHTML = "Previous sibling changing..."
+        // nextSibling = sibling.nextElementSibling.innerHTML = "Next sibling changing..."
+
+        //  ADD CLASS & ID VIA JAVASCRIIPT 
+        // let h1 = document.getElementById("add")
+        // h1.className = "newclass1 newclass2";
+        // h1.id = "newid";
+
+        // APPEND NEW TAG 
+        /*  
+         let elm = document.getElementById("intro");
+         let creatingh1 = document.createElement("h1")
+ 
+         // THROUGH FUNCTIONS
+         // let text = document.createTextNode("Append new h1 tag THROUGH FUNCTION...");
+         // creatingh1.appendChild(text)
+         // elm.appendChild(creatingh1)  
+         // document.body.appendChild(creatingh1)   
+         
+         // THROUGH PROPERTIES
+         // creatingh1.textContent = "This is append THROUGH PROPERTIES"
+         // elm.appendChild(creatingh1)  
+         // document.body.appendChild(creatingh1)   
+        */
+
+        // PREPEND NEW TAG 
+        /*  
+         let elm = document.getElementById("intro");
+         let creatingh1 = document.createElement("h1")
+         creatingh1.innerText = `I am a dynamic heading`;
+         elm.prepend(creatingh1);  
+        */
+
+        // READ innerHTML THROUGH PROPERTIES
+        // let elm = document.getElementById("para");
+        // console.log(elm.textContent);
+
+        // WRITING innerHTML THROUGH PROPERTIES
+        // let elm = document.getElementById('list');
+        // let item = document.createElement("li");
+        // item.textContent = "Adding NEW li in list......";
+        // elm.appendChild(item)
+
+        // insertBefore function in an element
+        // let elm = document.getElementById('list');
+        // let item = document.createElement("li");
+        // item.textContent = "APPEND NEW li in list...";
+        // let pos = elm.firstElementChild;  //insert before selected item
+        // let pos = elm.firstElementChild.nextElementSibling; //insert after selected item
+        // elm.insertBefore(item, pos)
+
+        // insertBefore function in a body
+        // let body = document.body;
+        // let elm = document.createElement("h2");
+        // elm.textContent = "Insert new h2 before list";
+        // let pos = document.getElementById("list")
+        // body.insertBefore(elm,pos)
+
+        // remove ul child element
+        // let parent = document.getElementById("menu");
+        // let deleteElm = parent.firstElementChild.nextElementSibling;
+        // parent.removeChild(deleteElm);
+        // document.body.removeChild(parent); // remove whole ul list
+
+        // clone element
+        // let parent = document.getElementById("menu")
+        // let cloneMenu  = parent.cloneNode(true)
+        // cloneMenu.id = "menu2"
+        // document.body.appendChild(cloneMenu)
+
+        // Replace element in js
+        // let parent = document.getElementById("menu")
+        // let item = document.createElement("li")
+        // item.textContent = "Services"
+        // let pos = parent.firstElementChild.nextElementSibling;
+        // parent.replaceChild(item, pos)
+
+        // Insert adjacent html
+        // let elm = document.getElementById("intro")
+        // let newh1 = "<h3>Inserting... h3 at adjacent place</h3>"
+        // elm.insertAdjacentHTML('beforebegin', newh1);
+        // elm.insertAdjacentHTML('afterbegin', newh1);
+        // elm.insertAdjacentHTML('beforeend', newh1);
+        // elm.insertAdjacentHTML('afterend', newh1);
+
+
+        //////////////////////////////// PART - 2 ////////////////////////////////////
+ /*
+             let btn = document.getElementById("btn")
+     
+            //  Change Attribute
+             btn.setAttribute('class', "form1");
+             btn.getAttribute('name');
+             btn.removeAttribute('class')
+             btn.hasAttribute('class');
+     
+            //  Change Inline Style
+             btn.style.cssText += "background-color: red; color:white;" (overwrite inline css)
+             btn.setAttribute('style', "background-color: red; color:white;")
+             btn.style.color = "blue"
+     
+            //  COMPUTED CSS
+             let css = getComputedStyle(btn);
+             console.log(css.color);
+     
+        */
+
+        /*
+            let box = document.getElementById("box")
+    
+            // GET CSS CLASSES
+            console.log(box.className);
+            console.log(box.classList);
+            for (let css of box.classList) { console.log(css) }
+    
+            // CHANGE CSS CLASSES
+            console.log(box.className);
+            box.className += " dim"
+            box.classList.add("dim","colors")
+            box.classList.remove("dim")
+            box.classList.replace("color", "dim")
+            console.log(box.classList.contains("color"));
+            box.classList.toggle("dim");
+    
+            // GET WIDTH  & HEIGHT
+            let box = document.getElementById("box")
+            let width = box.offsetWidth;       //border, padding included width
+            let height  = box.offsetHeight;    //border, padding included height
+            let width = box.clientWidth;       //only padding included width                
+            let height  = box.clientHeight;    //only padding included height        
+            console.log(width,height);
+        */
+
+        /*
+            // ADD & REMOVE EVENT LISTENER
+            function click1() { 
+                console.log(event);
+                console.log(event.currentTarget);
+                console.log("Click1 ! activated!!");
+             }
+            btn.addEventListener("click", click1);
+            btn.removeEventListener('click', click1); // remove element works if we use addEventListener and pass external function as callback
+        */
+
+        /*
+             const btns = document.querySelectorAll('.btn');
+             btns.forEach(function(btn){
+                btn.addEventListener('click',function(e){
+                    console.log(target,e.target);
+                    console.log(currentTarget,e.currrentTarget);
+                });
+             }):
+        */
+
+        /* 
+            //  LOADING EVENT
+            window.addEventListener('DOMContentLoaded', function() {
+                console.log("DOM tree created");
+            })
+            window.addEventListener('load', function() {
+                console.log("Fully loaded");
+            })
+        */
+
+        /*
+            let box = document.getElementById("box")
+            function func() { alert("Clicked") };
+    
+            // MOUSE EVENT
+            box.addEventListener("contextmenu",func)
+            box.addEventListener('click', func)     //fires after full action occurs
+            box.addEventListener("dblclick",func)
+            box.addEventListener("mousedown",func)  //button is pressed
+            box.addEventListener("mouseup",func)    //button is released
+            box.addEventListener('mouseenter', func)    // moved onto an element
+            box.addEventListener('mouseleave', func)    // moved out of an element
+            box.addEventListener("mouseout",func)
+            box.addEventListener('mouseover', func)
+    
+            // KEY UP & DOWN EVENTS
+            window.addEventListener('keydown',(event) => console.log(event.key))
+            window.addEventListener('keyup',(event) => console.log(event.key))
+            window.addEventListener('keypress',(event) => console.log(event.key))
+        */
+
+        /* 
+             //  WHEEL EVENT
+             window.addEventListener('wheel', (event) => {
+                 if (event.deltaY < 0) { console.log("scrolling up...") }
+                 else if (event.deltaY > 0) { console.log("scrolling down...") }
+             })
+             window.addEventListener('scroll', () => {
+                 if (window.pageYOffset > 250) { document.body.style.background = "red" }
+                 else {  document.body.style.background = "white" }
+             })
+        */
+
+        /* 
+            // INPUT EVENT
+            let x = document.getElementById("name");
+            x.addEventListener('focus',()=>{x.style.background = "yellow"})
+            x.addEventListener('blur',()=>{x.style.background = "white"})
+            x.addEventListener('change',function(){ console.log(this.value) })
+            x.addEventListener('input',function(){ console.log(this.value) })
+        */
+
+        /* 
+            let div = document.getElementById("mydiv")
+            let btn = document.getElementById("btn")
+            
+            // EVENT CAPTURING
+            btn.addEventListener('click', () => { console.log("button clicked"), true })
+            div.addEventListener('click', () => { console.log("div clicked") }, true)
+            document.body.addEventListener('click', () => { console.log("body clicked") }, true)
+            
+            // EVENT BUBBLING 
+            btn.addEventListener('click', () => { console.log("button clicked") })
+            div.addEventListener('click', () => { console.log("div clicked") })
+            document.body.addEventListener('click', () => { console.log("body clicked") })
+    
+            // STOP PROPOGATION 
+            btn.addEventListener('click', (event) => { console.log("button clicked"); })
+            div.addEventListener('click', () => { console.log("div clicked");event.stopPropagation() }) 
+            div.addEventListener('click', () => { console.log("div clicked");event.stopImmediatePropagation() })
+            document.body.addEventListener('click', () => { console.log("body clicked");event.stopPropagation() })
+            document.body.addEventListener('click', () => { console.log("body clicked");event.stopImmediatePropagation() })
+         */
+
+
+        // PREVENT DEFAULT
+        // let myForm = document.getElementById("myForm")
+        // myForm.addEventListener('submit', (event) => { event.preventDefault() })
+
+        /*        
+            // WINDOW OBJECT
+            console.log(window.innerHeight);
+            console.log(window.outerHeight);
+            console.log(window.innerWidth);
+            console.log(window.outerWidth);
+            
+            // Closing & Opening new window
+            let btn1 = document.getElementById("btn1");
+            let btn2 = document.getElementById("btn2");
+            let btn3 = document.getElementById("btn3");
+    
+            let url1 = "https://www.google.com";
+            let url2 = "https://www.yahoo.com";
+            let features = "height=500,width=500";
+            let closeWindow;
+    
+            btn1.addEventListener('click', function () { closeWindow = window.open(url1, 'google', features) })
+            btn2.addEventListener('click', function () { window.open(url2, 'google', features) })
+            btn3.addEventListener('click', function () { closeWindow.close() })
+        */
+
+        /* 
+            //  SET TIMEOUT & TIME NTERVAl
+            let timeoutId = setTimeout(() => alert("Setting Timeout..."), 5000)
+            let intervalId = setInterval(()=>{console.log("Setting Interval")},3000)
+            clearTimeout(timeoutId)
+            clearInterval(intervalId)
+        */
+
+        /* 
+            // LOCATION OBJECT PROPERTIES
+            console.log(location.protocol);
+            console.log(location.host);
+            console.log(location.hostname);
+            console.log(location.origin);
+            console.log(location.href);
+            console.log(location.pathname);
+
+            // LOCATION OBJECT METHODS
+            function redirect(){
+                window.location = "https://www.google.com"    OR
+                location.href = "https://www.google.com"      OR
+                location.assign("https://www.google.com")
+                location.replace("https://www.google.com") //does not store history
+                location.reload()
+            }
+        */
+
+        /*     
+            //  NAVIGATOR OBJECT
+            console.log(navigator.appName);
+            console.log(navigator.appVersion);
+            console.log(navigator.appCodeName);
+            console.log(navigator.cookieEnabled);
+            console.log(navigator.userAgent);
+            console.log(navigator.platform);
+            console.log(navigator.doNotTrack);
+            console.log(navigator.geolocation);
+            console.log(navigator.javaEnabled());
+
+        */
+
+        /* 
+            // SCREEN OBJECT
+            console.log(screen.height);
+            console.log(screen.availHeight);
+            console.log(screen.width);
+            console.log(screen.availWidth);
+            console.log(screen.colorDepth);
+            console.log(screen.orientation);
+        */
+
+        /*
+            WEB STORAGE (the data survives a page refresh (for sessionStorage) and even a full browser restart (for localStorage)
+
+            We already have cookies. Why additional objects?
+
+            Unlike cookies, web storage objects are not sent to server with each request.Because of that, we can store much more. Most modern browsers allow at least 5MB of data (or more) and have settings to configure that.
+            Also unlike cookies, the server can’t manipulate storage objects via HTTP headers. Everything’s done in JavaScript.
+            The storage is bound to the origin (domain/protocol/port triplet). That is, different protocols or subdomains infer different storage objects, they can’t access data from each other.
+
+            localStorage,sessionStorage
+            setItem(key, value) – store key/value pair.
+            getItem(key) – get the value by key.
+            removeItem(key) – remove the key with its value.
+            clear() – delete everything.
+            key(index) – get the key on a given position.
+            length – the number of stored items.
+
+
+            The main features of localStorage are :-
+            Shared between all tabs and windows from the same origin.
+            The data does not expire. It remains after the browser restart and even OS reboot.
+
+            The main features of sessionStorage are :- 
+            The sessionStorage exists only within the current browser tab.
+            Another tab with the same page will have a different storage.
+            But it is shared between iframes in the same tab (assuming they come from the same origin).
+            The data survives page refresh, but not closing/opening the tab.
+
+            // JOSN.stringify().JSON.parse()
+
+            const friends = ['john', 'peter', 'bob'];
+            // If we want to pass array or objects we need to stringify it first
+            localStorage.setItem('friends', JSON.stringify(friends));
+            // If we want to get array or objects we need to parse it first
+            const values = JSON.parse(localStorage.getItem('friends'));
+            console.log(values);
+        */
+
+        /* 
+            SET INTERVAL
+            setInterval - runs function repeatedly, at specific Intervals
+            - pass function reference
+            - duration in ms
+            - default 0
+            - returns unique identifier
+            - clearInterval to cancel
+
+            function showScore(name, score) { console.log(`Hello ${name}, your score is ${score}`) }
+
+            const firstId = setInterval(showScore, 1000, 'bobo', 45);
+            const secondId = setInterval(showScore, 1000, 'susan', 5);
+            clearInterval(firstId);
+
+            
+            SET TIMEOUT
+            setTimeout - runs function after specific time
+            - pass function reference
+            - duration in ms
+            - default 0
+            - returns unique identifier
+            - clearTimeout to cancel
+
+            function showScore(name, score) { console.log(`Hello ${name}, your score is ${score}`) }
+
+            const firstId = setTimeout(showScore, 2000, 'bobo', 45);
+            const secondId = seTimeout(showScore, 2000, 'susan', 5);
+            clearTimeout(firstId);
+        */
+
+
+    </script>
+</body>
+
+</html>

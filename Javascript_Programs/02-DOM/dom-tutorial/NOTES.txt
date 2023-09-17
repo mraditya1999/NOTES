@@ -1,0 +1,23 @@
+=> JavaScript (JS) is a lightweight, interpreted, or just-in-time compiled programming language with first-class functions. 
+=> JavaScript is a prototype-based, multi-paradigm, single-threaded, dynamic language, supporting object-oriented, imperative, and declarative (e.g.functional programming) styles.
+=> Ecma Intenational => Organization that creates standards for technologies
+=> Ecma-262 => standard published by Ecma International. It contains the specification for a scripting language
+=> Ecmascript => specifications defined in ECMA-262 for creating a scripting language
+=> Javascript => A general purpose scripting language  that conforms to  the ECMAScript specifications
+=> BOM => All globla JS objects,functions and variables with var keyword automatically become members of the window object
+=> Method => A function associated  with object knows as method
+=> Hoisting =>is a process where the interpreter move the declaration of functions, variables or classes to the top of their scope, prior to execution of the code.
+=> Document Object Model(DOM) => is an Application Programming Interface(API) for manipulating HTML and XML documents
+=> In single array we can store multiple datatypes let arr = [12,"string",true,null,undefined]
+=> function take function as argument and invoke it, is called callback function
+Object Oriented  Programming(OOPs)
+=> DRY => Don't Repeat Yourself
+=> Encapsulation => means wrapping up data and member functions(method) together into a single unit
+=> Abstraction => is a process of showing only necessary features of an entity/object and hidethe other irrelevant information.
+=> Inheritance => allows a class(subclass) to acquire the properties and behaviour of another class(super-class)
+=> Polymorphism => A subclass can define its own unique behaviour and still share the same functionalities of its parent/base class
+=> Prototypes => are the mechanism by which JavaScript objects inherit features from one another
+Every object in JavaScript has a built-in property, which is called its prototype.The prototype is itself an object, so the prototype will have its own prototype, making what's called a prototype chain.
+Prototype doesn't work on arrow functions
+
+

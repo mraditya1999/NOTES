@@ -1,0 +1,13 @@
+// Array.from and Array.of - NOT ON THE PROTOTYPE
+// of - creates a new Array instance from a variable number of arguments
+
+const array = ['one', 'two', 'three'];
+console.log(array);
+console.log(array.map);
+console.log(array.from);
+console.log(array.of);
+
+const friends = Array.of('john', 2, true, { fname: 'john smilga' });
+console.log(friends);
+
+

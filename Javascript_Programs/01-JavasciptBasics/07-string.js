@@ -1,0 +1,28 @@
+let str1 = 'hello';
+let str2 = '   Ciao World Goodbye Ciao  ';
+
+// console.log(str1 + ' ' + str2);
+// console.log(str1.length);
+// console.log(str1[2]);
+// console.log(str1.at(2));
+// console.log(str1.charAt(2));
+// console.log(str1.charCodeAt(2));
+// console.log(str2.indexOf('C'));
+// console.log(str2.lastIndexOf('C'));
+// console.log(str1.concat(' ', str2));
+// console.log(str2.substring(6, 13));
+// console.log(str2.slice(0, 6));
+// console.log(str2.split(' '));
+// console.log(str2.trimStart());
+// console.log(str2.trimEnd());
+// console.log(str2.trim());
+// console.log(str2.toUpperCase());
+// console.log(str2.toLowerCase());
+// console.log(str2.replace('Ciao', 'Hello'));
+// console.log(str2.includes('Ciao'));
+// console.log(str2.valueOf(str1));
+// console.log(str2.search('s'));
+// console.log(str2.startsWith(' '));
+// console.log(str2.startsWith('C', 3));
+// console.log(str2.endsWith('g'));
+// console.log(str2.repeat(5));
